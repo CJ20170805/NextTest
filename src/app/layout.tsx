@@ -4,6 +4,7 @@ import "./globals.css";
 import '@mantine/core/styles.css';
 import { ColorSchemeScript } from '@mantine/core'
 import { createTheme, MantineProvider } from '@mantine/core';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const theme = createTheme({
   //colorScheme: 'dark',
@@ -24,6 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <SpeedInsights/>
       <head>
         <ColorSchemeScript />
       </head>
