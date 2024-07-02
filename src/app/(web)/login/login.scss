@@ -1,0 +1,21 @@
+.login-wrapper{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .login-form{
+        padding: 40px;
+        width: 600px;
+        height: 300px;
+        border: 1px solid #ececee;
+        border-radius: 20px;
+    }
+    .sign-up{
+        color: #5d5dd0;
+        cursor: pointer;
+    }
+    .mantine-Group-root{
+        margin: 20px 0 0 0;
+    }
+}

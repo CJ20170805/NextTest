@@ -1,0 +1,11 @@
+.home-page{
+    .blog-list{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        .blog-item{
+            width: 30%;
+        }
+    }
+}
