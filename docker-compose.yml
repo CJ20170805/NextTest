@@ -1,12 +1,51 @@
 version: '3.4'
 
 services:
-  nexttest:
-    image: nexttest
-    build:
-      context: .
-      dockerfile: ./Dockerfile
+  # next-docker:
+  #   image: next-docker
+  #   build:
+  #     context: .
+  #     dockerfile: ./Dockerfile
+  #   environment:
+  #     NODE_ENV: production
+  #   ports:
+  #     - 3000:3000
+  next-docker:
+    image: liberty1911/nextjs-docker2
+    restart: always
     environment:
-      NODE_ENV: production
+      DATABASE_URL: "postgresql://root:123@db:5432/Blog"
     ports:
-      - 3000:3000
+      - "3000:3000"
+    networks:
+      - next
+
+  db:
+    image: postgres
+    restart: always
+    shm_size: 128mb
+    environment:
+      POSTGRES_USER: 'root'
+      POSTGRES_PASSWORD: '123'
+      POSTGRES_DB: 'Blog'
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+    networks:
+      - next
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8080:8080"
+    networks:
+      - next
+
+networks:
+  next:
+    external: true
+
+volumes:
+  db-data:
