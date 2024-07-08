@@ -70,7 +70,7 @@ jobs:
         uses: 'google-github-actions/auth@v2'
         with:
           project_id: 'endless-sol-428501-n9'
-          workload_identity_provider: '${{ secrets.WIF_PROVIDER }}'
+          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
 
       # NOTE: Alternative option - authentication via credentials json
       # - name: Google Auth
