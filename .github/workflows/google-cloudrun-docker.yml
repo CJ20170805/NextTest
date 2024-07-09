@@ -76,8 +76,8 @@ jobs:
           workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
           service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
         
-      - name: Show outpus - GA
-        run: echo ${{ toJson(steps.auth.outputs) }}
+      # - name: Show outpus - GA
+      #   run: echo ${{ toJson(steps.auth.outputs) }}
 
       # NOTE: Alternative option - authentication via credentials json
       # - name: Google Auth
