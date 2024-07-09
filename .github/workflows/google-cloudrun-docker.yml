@@ -77,7 +77,7 @@ jobs:
           service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
         
       - name: Show outpus - GA
-        run: echo "${{ toJson(steps.auth.outputs) }}" | jq '.'
+        run: echo ${{ toJson(steps.auth.outputs) }}
 
       # NOTE: Alternative option - authentication via credentials json
       # - name: Google Auth
