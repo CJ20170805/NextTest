@@ -68,13 +68,13 @@ jobs:
 
       - name: Google Auth
         id: auth
-        uses: 'google-github-actions/auth@v1'
+        uses: 'google-github-actions/auth@v2'
         with:
           #credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}' # Replace with the name of your GitHub Actions secret
           project_id: 'endless-sol-428501-n9'
           # token_format: access_token
           workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
-          # service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+          service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
         
       - name: Show outpus - GA
         run: echo ${{ steps.auth.outputs }}
