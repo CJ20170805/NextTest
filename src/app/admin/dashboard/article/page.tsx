@@ -122,7 +122,7 @@ function Article() {
         ));
 
         setRows(rowsData);
-        console.log('h222', rowsData);
+        console.log('h222333', rowsData);
 
     }
 
